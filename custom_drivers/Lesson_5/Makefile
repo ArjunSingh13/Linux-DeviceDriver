@@ -1,5 +1,5 @@
 
-obj-m := device_setup.o
+obj-m := pcd_device_setup.o platform_driver.o
 ARCH=arm
 CROSS_COMPILE=arm-linux-gnueabihf-
 KERN_DIR =/home/arjun/Work/linux/ldd-udemy/ldd/source/linux/
