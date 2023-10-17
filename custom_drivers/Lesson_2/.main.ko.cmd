@@ -1,0 +1,1 @@
+cmd_/home/arjun/Work/linux/ldd-udemy/ldd/custom_drivers/Lesson_2/main.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/arjun/Work/linux/ldd-udemy/ldd/custom_drivers/Lesson_2/main.ko /home/arjun/Work/linux/ldd-udemy/ldd/custom_drivers/Lesson_2/main.o /home/arjun/Work/linux/ldd-udemy/ldd/custom_drivers/Lesson_2/main.mod.o;  true

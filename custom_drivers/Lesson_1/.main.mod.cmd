@@ -1,0 +1,1 @@
+cmd_/home/arjun/Work/linux/ldd-udemy/ldd/custom_drivers/Lesson_1/main.mod := { echo  /home/arjun/Work/linux/ldd-udemy/ldd/custom_drivers/Lesson_1/main.o;  echo; } > /home/arjun/Work/linux/ldd-udemy/ldd/custom_drivers/Lesson_1/main.mod

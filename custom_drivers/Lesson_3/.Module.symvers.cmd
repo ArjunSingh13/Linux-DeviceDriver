@@ -1,0 +1,1 @@
+cmd_/home/arjun/Work/linux/ldd-udemy/ldd/custom_drivers/Lesson_3/Module.symvers :=  scripts/mod/modpost -m -a     -o /home/arjun/Work/linux/ldd-udemy/ldd/custom_drivers/Lesson_3/Module.symvers -T /home/arjun/Work/linux/ldd-udemy/ldd/custom_drivers/Lesson_3/modules.order -i Module.symvers -e 

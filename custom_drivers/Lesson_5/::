@@ -1,0 +1,45 @@
+##PLATFORM DRIVERS##
+
+In this lesson we will implement platform drivers.
+
+So platform bus is a pseudo bus or virtual bus. It does not have any physical existence. it is linux terminology that do not have auto discoverable & hot plugging capability.
+Because in SoC it is vendor specific, they have their own design and certain set of protocols that the implement unless other drivers such as wifi or usb.
+
+In SoC there is no central bus system such as PCIe to find all on/off chip peripherals. So to all these non discoverable buses linux call it platform bus. so on this bus
+we connect most of our embedded sensors/modules.
+
+
+###Discovery of Devices###
+
+- Every device has its configuration data and resources, which need to be reported to the OS.
+- With this data OS learn about connected devices automatically (Device enumeration).
+- Enumeration is a process through which OS can inquire and receive info such as type of device, manufacturer, device config etc of all connected devices.
+- Once info is gathered by OS it can autoload appropriate driver for device. Eg buses USB, PCI support enumeration/hot plugging.
+- However, for embedded system platforms, this may not be the case since most peripherals are connected to CPU over buses that dont support auto discovery. 
+- That is why for embedded platform devices information must be fed to linux kernel manually either at compile time or at boot time of the kernel.
+
+
+###Device Information###
+
+It can be: 
+memory or I/O mapped base address and range information, IRQ number on which the device issues interrupt to the processor, device identification number, DMA channel info,
+device address, pin configuration, power/voltage param etc.
+
+
+
+
+1. During compilation of kernel ( static and deprecated method)
+2. Loading dynamically ( as a kernel module and not recommended)
+3. During kernel boot ( Device tree blob, latest, recommended)
+
+In board file approch, you need to add hardware configuration details to the kernel and need to recompile the kernel if any device property changes.
+
+In device tree method, OS uses the device tree to discover the topology of the hardware at runtime and thereby support a majority of available hardware without hard coded information. 
+
+In the old linux kernel version they use board file method and in arch/arm/mach-omap2 you can find omap3beagle boardfile for BBB which has everything hardcoded for BBB. in newer kernel version all these 
+files are removed and there is just generic board file and all board peripheral detail is taken from device tree file.
+
+TI gives drivers for general peripherals: SPI, I2C, USB, CAN etc. Eg location drivers/spi/spi-omap2-mcspi.c. These are called controller drivers.
+
+
+
